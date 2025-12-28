@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All about Gravity</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <main class="book-page">
+        <header class="book-header">
+            <p class="lead">Physics Series</p>
+            <h1>All about Gravity</h1>
+            <p class="muted">By Zhu’s group @ Groton</p>
+        </header>
+
+        <section class="card">
+            <h2>1. Kepler's Laws of Planetary Motion</h2>
+            <p>Before Newton mathematically described gravity, Johannes Kepler empirically derived three laws describing how planets move around the Sun.</p>
+
+            <ul>
+                <li><strong>Kepler's First Law (The Law of Ellipses):</strong> The orbit of every planet is an ellipse with the Sun at one of the two foci.</li>
+                <li><strong>Kepler's Second Law (The Law of Equal Areas):</strong> A line joining a planet and the Sun sweeps out equal areas during equal intervals of time.
+                    <ul>
+                        <li><strong>Physical Significance:</strong> This law is a direct consequence of the conservation of angular momentum. As a planet gets closer to the Sun (perihelion), it must speed up; as it gets farther away (aphelion), it slows down.</li>
+                    </ul>
+                </li>
+                <li><strong>Kepler's Third Law (The Law of Harmonies):</strong> The square of the orbital period of a planet is directly proportional to the cube of the semi-major axis (average distance) of its orbit ($T^2 \propto r^3$).</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>2. Newton's Law of Universal Gravitation</h2>
+            <p>Newton provided the underlying force mechanism that explains Kepler's observations.</p>
+            
+            
+            <h3>The Force of Gravity</h3>
+            <p>Newton's Law states that the gravitational force between any two point masses is directly proportional to the product of their masses and inversely proportional to the square of the distance between them.</p>
+            
+            <div class="formula">
+                $$F_g = \frac{GM_1M_2}{r^2}$$
+            </div>
+            <p>Where $G$ is the universal gravitational constant, $M_1$ and $M_2$ are the masses, and $r$ is the center-to-center distance.</p>
+
+            <h3>Gravitational Field (Acceleration due to Gravity)</h3>
+            <p>The acceleration experienced by a mass $M_2$ due to the gravitational field of $M_1$ is found by applying Newton's Second Law ($F=ma$):</p>
+            <div class="formula">
+                $$a_g = \frac{F_g}{M_2} = \frac{GM_1}{r^2}$$
+            </div>
+            <p class="muted">Note: The acceleration depends only on the mass of the central body ($M_1$) and the distance, not the mass of the object experiencing the acceleration.</p>
+        </section>
+
+        <section class="card">
+            <h2>3. Circular Orbital Mechanics</h2>
+            <p>For planets or satellites in circular orbits, gravity is the sole force providing the necessary centripetal force to keep the object moving in a circle.</p>
+            
+            
+            <h3>Setting up the Dynamics</h3>
+            <p>We equate the gravitational force ($F_g$) with the centripetal force ($F_c$):</p>
+            <div class="formula">
+                $$F_g = F_c$$
+                $$\frac{GM_1M_2}{r^2} = \frac{M_2v^2}{r}$$
+            </div>
+            <p>(Here, $M_1$ is the central massive body being orbited, and $M_2$ is the orbiting satellite. Note that $M_2$ cancels out.)</p>
+
+            <h3>Orbital Speed Derivation</h3>
+            <p>By simplifying the equation above, we determine the speed required to maintain a circular orbit at radius $r$:</p>
+            <p>$\frac{GM_1}{r} = v^2$</p>
+            <p><strong>Key Formula (Orbital Speed):</strong></p>
+            <div class="formula">
+                $$v = \sqrt{\frac{GM_1}{r}}$$
+            </div>
+
+            <details>
+                <summary>Deriving Kepler's Third Law from Newton's Laws</summary>
+                <p>For uniform circular motion, speed relates to the period $T$ by $v = \frac{2\pi r}{T}$. Substitute this into the $v^2$ equation derived above:</p>
+                <div class="formula">
+                    $$\frac{GM_1}{r} = \left( \frac{2\pi r}{T} \right)^2 = \frac{4\pi^2 r^2}{T^2}$$
+                </div>
+                <p>Rearranging to solve for $T^2$ gives the Key Formula (Kepler's III Derivation):</p>
+                <div class="formula">
+                    $$T^2 = \left( \frac{4\pi^2}{GM_1} \right) r^3$$
+                </div>
+                <p>Since the term in parentheses is constant for a given central body $M_1$, this proves $T^2 \propto r^3$.</p>
+            </details>
+        </section>
+
+        <section class="card">
+            <h2>4. Gravitational Energy and Escape Velocity</h2>
+            <p>Dealing with orbits often requires analyzing energy rather than just forces. Both mechanical energy and angular momentum are conserved for orbits.</p>
+
+            
+            <h3>Derivation of Gravitational Potential Energy ($U_g$)</h3>
+            <p>Potential energy changes are defined by the negative work done by a conservative force. Because the gravitational force varies with distance, we must use integration to find the work done in moving a mass $M_2$ within the field of mass $M_1$.</p>
+            
+            <details>
+                <summary>The Work Integral & Evaluation</summary>
+                <p><strong>The Work Integral:</strong> The work done by gravity ($W_g$) moving mass $M_2$ from an initial radius $r_i$ to a final radius $r_f$ is the integral of the force dot the displacement. Since gravity is attractive (pointing inward opposite to the radial vector $d\vec{r}$), the force is negative:</p>
+                <div class="formula">
+                    $$W_g = \int_{r_i}^{r_f} \vec{F}_g \cdot d\vec{r} = \int_{r_i}^{r_f} \left(-\frac{GM_1M_2}{r^2}\right) dr$$
+                </div>
+                
+                <p>Evaluating the Integral:</p>
+                <div class="formula">
+                    $$W_g = -GM_1M_2 \int_{r_i}^{r_f} r^{-2} dr = -GM_1M_2 \left[ \frac{r^{-1}}{-1} \right]_{r_i}^{r_f} = GM_1M_2 \left[ \frac{1}{r} \right]_{r_i}^{r_f}$$
+                    $$W_g = GM_1M_2 \left( \frac{1}{r_f} - \frac{1}{r_i} \right)$$
+                </div>
+
+                <p><strong>Defining Potential Energy:</strong> The change in potential energy is $\Delta U_g = -W_g$.</p>
+                <div class="formula">
+                    $$\Delta U_g = U_f - U_i = -GM_1M_2 \left( \frac{1}{r_f} - \frac{1}{r_i} \right) = GM_1M_2 \left( \frac{1}{r_i} - \frac{1}{r_f} \right)$$
+                </div>
+            </details>
+
+            <h3>Why Infinity is the Zero Reference Point</h3>
+            <p>Potential energy only has physical meaning as a difference between two points. To define an absolute value for $U_g$ at a specific radius $r$, we must arbitrarily choose a reference point where $U_g = 0$.</p>
+            <p><strong>The Logic:</strong> If two masses are infinitely far apart ($r \to \infty$), the gravitational force between them approaches zero. It is physically intuitive to define this state—where they have no interaction—as the state of zero potential energy.</p>
+            
+            <p><strong>The Resulting Formula:</strong> Let's set the initial position at infinity ($r_i = \infty$) and define $U_i = U(\infty) = 0$. Let the final position be any distance $r$ ($r_f = r$).</p>
+            <div class="formula">
+                $$U(r) - U(\infty) = GM_1M_2 \left( \frac{1}{\infty} - \frac{1}{r} \right)$$
+                $$U(r) - 0 = GM_1M_2 \left( 0 - \frac{1}{r} \right)$$
+            </div>
+            <p><strong>Key Formula:</strong></p>
+            <div class="formula">
+                $$U_g = -\frac{GM_1M_2}{r}$$
+            </div>
+            
+            <p><strong>Implication of the Negative Sign:</strong> Because the zero point is at infinity and gravity is an attractive force, the system loses potential energy as the masses get closer. Therefore, gravitational potential energy for a bound system is always negative. You must add energy (do positive work) to separate the masses and bring the potential energy back up toward zero.</p>
+
+            <h3>Escape Velocity</h3>
+            <p><strong>Bound Systems:</strong> Systems are considered "bound" (e.g., a planet orbiting a star) when their total mechanical energy is less than zero. This means the negative potential energy has a greater magnitude than the positive kinetic energy.</p>
+            
+            <details>
+                <summary>Escape Velocity Derivation</summary>
+                <p>Escape velocity ($v_{esc}$) is the minimum speed needed for an object (mass $M_1$) to break free from the pull of a central mass ($M_2$). To "escape," the object must reach an infinite distance with at least zero kinetic energy left over. Therefore, the total initial energy must be at least zero.</p>
+                <div class="formula">
+                    $$E_{total} = K_{initial} + U_{initial} = 0$$
+                    $$\frac{1}{2}M_1v_{esc}^2 - \frac{GM_1M_2}{d} = 0$$
+                </div>
+                <p>(Where $d$ is the starting distance from $M_2$). Rearranging and canceling $M_1$: $\frac{1}{2}v_{esc}^2 = \frac{GM_2}{d}$.</p>
+            </details>
+
+            <p><strong>Key Formula (Escape Velocity):</strong></p>
+            <div class="formula">
+                $$v_{esc} = \sqrt{\frac{2GM_2}{d}}$$
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>5. Gravity of Spheres and Shells (Newton's Shell Theorem)</h2>
+            <p>How does gravity behave when the mass isn't just a tiny point?</p>
+
+            
+            <h3>Hollow Spherical Shell (Mass $M$, Radius $R$)</h3>
+            <ul>
+                <li><strong>Outside ($r > R$):</strong> The shell acts exactly as if all its mass were concentrated at a point in the center. $F_g = \frac{GMm}{r^2}$.</li>
+                <li><strong>Inside ($r < R$):</strong> The gravitational forces from different parts of the shell cancel each other out perfectly. The net force is zero. $F_g = 0$.</li>
+            </ul>
+
+            <h3>Uniform Solid Sphere (Mass $M$, Radius $R$)</h3>
+            <ul>
+                <li><strong>Outside ($r > R$):</strong> Like the shell, it acts as a point mass at the center. $F_g = \frac{GMm}{r^2}$.</li>
+                <li><strong>Inside ($r < R$):</strong> As you burrow inside the sphere, only the mass <em>enclosed</em> within your current radius $r$ exerts a net force. The gravity decreases linearly to zero at the center.</li>
+            </ul>
+            <p><strong>Key Formula (Inside Solid Sphere):</strong> $F_g = \frac{GMm}{R^3}r$.</p>
+            <p><strong>General Spherically Symmetric Sphere:</strong> For any sphere where density $\rho$ depends only on radius $r$ (represented as $\rho(r)$), the force is found by integrating shells: $\vec{F}_g = -Gm \int \frac{dM}{r^2}\hat{r}$ where $dM = \rho(r)dV$.</p>
+        </section>
+
+        <nav class="chapter-nav bottom">
+            <a href="index.html">Back to Index</a>
+        </nav>
+    </main>
+</body>
+</html>

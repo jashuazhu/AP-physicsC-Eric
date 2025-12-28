@@ -46,273 +46,38 @@
     <main class="book-page">
         <header class="book-header">
             <p class="lead">By Zhu’s group @ Groton</p>
-            <h1>SHM Problems</h1>
+            <h1>AP Physics mechanics 2nd semester review</h1>
         </header>
 
         <section class="card">
             <p>This review is designed for advanced high school physics (such as AP Physics C) where calculus is used to link forces to the rate of change of motion.</p>
-            <p>The core concept here is translating Newton's Second Law ($F_{net} = ma$) into a <strong>second-order linear differential equation</strong>.</p>
-            
-            <h2>I. The Foundation: The SHM Differential Equation</h2>
-            <p>Any system undergoing Simple Harmonic Motion (SHM) must satisfy a specific condition: the acceleration of the object is proportional to its displacement from equilibrium but in the opposite direction.</p>
-            <p>Since acceleration ($a$) is the second derivative of displacement ($x$) with respect to time ($a = \frac{d^2x}{dt^2}$ or $\ddot{x}$), the defining equation for SHM is:</p>
-            
-            <div class="formula">
-                $$\frac{d^2x}{dt^2} = -\omega^2 x$$
-            </div>
-            
-            <p>Rearranged into the standard "homogeneous" form:</p>
-            <div class="formula">
-                $$\frac{d^2x}{dt^2} + \omega^2 x = 0$$
-            </div>
-            
-            <p><strong>The Goal of Derivation:</strong> We analyze the forces in a specific system, apply $F_{net}=ma$, and manipulate the equation until it looks exactly like the standard form above.</p>
-            <p><strong>The Result:</strong> Once in that form, whatever constant coefficient ends up multiplying the $x$ term <strong>must</strong> be equal to $\omega^2$.</p>
-            <p>From $\omega$ (angular frequency, rad/s), we easily find frequency ($f$, Hz) and period ($T$, s):</p>
-            <div class="formula">
-                $$\omega = 2\pi f = \frac{2\pi}{T}$$
-            </div>
-        </section>
 
-        <section class="card">
-            <h2>II. The Spring-Mass System</h2>
-            <p>A block of mass $m$ is attached to a horizontal ideal spring with spring constant $k$ on a frictionless surface.</p>
-
-            <h3>A. The Derivation</h3>
-            <p><strong>Identify the Restoring Force:</strong> The only horizontal force acting on the mass when displaced by amount $x$ is the spring force (Hooke's Law).</p>
-            <div class="formula">$$F_{net} = -kx$$</div>
             
-            <p><strong>Apply Newton's Second Law:</strong></p>
-            <div class="formula">$$F_{net} = ma$$</div>
-            <div class="formula">$$-kx = m a$$</div>
-            
-            <p><strong>Substitute the calculus definition of acceleration:</strong></p>
-            <div class="formula">$$-kx = m \frac{d^2x}{dt^2}$$</div>
-            
-            <p><strong>Rearrange into the Standard SHM Form:</strong> Get the second derivative term by itself and move everything to one side.</p>
-            <div class="formula">$$m \frac{d^2x}{dt^2} + kx = 0$$</div>
-            <p>Divide the entire equation by $m$:</p>
-            <div class="formula">$$\frac{d^2x}{dt^2} + \left( \frac{k}{m} \right)x = 0$$</div>
-            
-            <p><strong>Compare and Identify $\omega$:</strong> compare this result to the standard form $(\frac{d^2x}{dt^2} + \omega^2 x = 0)$.</p>
-            <p>The term in the parentheses corresponds to $\omega^2$.</p>
-            <div class="formula">$$\omega^2 = \frac{k}{m} \implies \omega = \sqrt{\frac{k}{m}}$$</div>
-            
-            <p><strong>Determine Period and Frequency:</strong></p>
-            <div class="formula">$$T = \frac{2\pi}{\omega} \implies T = 2\pi\sqrt{\frac{m}{k}}$$</div>
-            <div class="formula">$$f = \frac{1}{T} \implies f = \frac{1}{2\pi}\sqrt{\frac{k}{m}}$$</div>
+            <section class="table-of-contents">
+                <ol>
+      
+                <li>
+                    <span class="chapter-number"></span>
+                    <div class="chapter-entry">
+                    <a href="SHM.html">1. Oscilliation</a>
+                    </div>
+                </li>
 
-            <h3>B. Key Points & Formulas: Spring System</h3>
-            <ul>
-                <li><strong>Restoring Force:</strong> Provided by the spring's elasticity ($F_s$).</li>
-                <li><strong>Condition:</strong> The spring must obey Hooke's Law (it must not be overstretched past its elastic limit).</li>
-                <li><strong>Mass Dependence:</strong> The period <strong>does</strong> depend on the mass. A heavier mass oscillates slower.</li>
-                <li><strong>Gravity Independence:</strong> For a horizontal system, gravity plays no role.</li>
-                <li>For a vertical spring system, gravity only shifts the equilibrium position downwards; it does <strong>not</strong> change the period or frequency.</li>
-                <li><strong>Energy:</strong> Total mechanical energy is conserved (exchange between kinetic and elastic potential). $E = \frac{1}{2}kA^2$.</li>
-            </ul>
+                <li>
+                    <span class="chapter-number"></span>
+                    <div class="chapter-entry">
+                    <a href="rotation.html">2. Rotation</a>
+                    </div>
+                </li>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Variable</th>
-                        <th>Formula</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Restoring Force</td>
-                        <td>$F = -kx$</td>
-                    </tr>
-                    <tr>
-                        <td>Angular Frequency</td>
-                        <td>$\omega = \sqrt{\frac{k}{m}}$</td>
-                    </tr>
-                    <tr>
-                        <td>Period</td>
-                        <td>$T = 2\pi\sqrt{\frac{m}{k}}$</td>
-                    </tr>
-                    <tr>
-                        <td>Frequency</td>
-                        <td>$f = \frac{1}{2\pi}\sqrt{\frac{k}{m}}$</td>
-                    </tr>
-                    <tr>
-                        <td>Potential Energy</td>
-                        <td>$U_s = \frac{1}{2}kx^2$</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="card">
-            <h2>III. The Simple Pendulum System</h2>
-            <p>A point mass $m$ (the bob) is attached to a massless, inextensible string of length $L$ placed in a gravitational field $g$. It is displaced by a small angle $\theta$.</p>
-
-            <h3>A. The Derivation</h3>
-            <p><strong>Identify Forces and Geometry:</strong> The forces are Tension ($T_{tens}$) acting along the string toward the pivot, and Gravity ($mg$) acting straight down.</p>
-            <p><strong>Resolve Forces:</strong> We are interested in the motion <strong>tangent</strong> to the arc of the swing. The tension force is perpendicular to the motion, so it does no work and provides no restoring force. We resolve gravity into components parallel and perpendicular to the string. The component of gravity acting tangent to the arc, trying to restore the bob to the center, is $F_g \sin\theta$.</p>
-            
-            <p><strong>Apply Newton's Second Law (Tangential):</strong> The restoring force is opposite to the displacement angle.</p>
-            <div class="formula">$$F_{tangential} = ma_{tangential}$$</div>
-            <div class="formula">$$-mg\sin\theta = m a_{tangential}$$</div>
-            
-            <p><strong>Relate Angular to Linear:</strong></p>
-            <p>The displacement along the arc is arc length $s = L\theta$ (where $\theta$ must be in radians).</p>
-            <p>Tangential acceleration is the second derivative of the arc length: $a_{tangential} = \frac{d^2s}{dt^2} = L\frac{d^2\theta}{dt^2}$.</p>
-            
-            <p>Substitute this back into the force equation:</p>
-            <div class="formula">$$-mg\sin\theta = m \left( L\frac{d^2\theta}{dt^2} \right)$$</div>
-            <p>(Note: The mass $m$ cancels out on both sides).</p>
-            <div class="formula">$$-g\sin\theta = L\frac{d^2\theta}{dt^2}$$</div>
-            
-            <p><strong>The Small Angle Approximation (Crucial Step):</strong> The equation above is not SHM because it depends on $\sin\theta$, not just $\theta$. However, if the angle $\theta$ is small (typically $< 15^\circ$ or roughly $0.26$ rad), then:</p>
-            <div class="formula">$$\sin\theta \approx \theta \text{ (in radians)}$$</div>
-            <p>Applying this approximation:</p>
-            <div class="formula">$$-g\theta = L\frac{d^2\theta}{dt^2}$$</div>
-            
-            <p><strong>Rearrange into Standard SHM Form:</strong></p>
-            <div class="formula">$$L\frac{d^2\theta}{dt^2} + g\theta = 0$$</div>
-            <p>Divide by $L$:</p>
-            <div class="formula">$$\frac{d^2\theta}{dt^2} + \left( \frac{g}{L} \right)\theta = 0$$</div>
-            
-            <p><strong>Compare and Identify $\omega$:</strong> Compare to the standard form (using $\theta$ instead of $x$). The term in the parentheses is $\omega^2$.</p>
-            <div class="formula">$$\omega^2 = \frac{g}{L} \implies \omega = \sqrt{\frac{g}{L}}$$</div>
-            
-            <p><strong>Determine Period and Frequency:</strong></p>
-            <div class="formula">$$T = \frac{2\pi}{\omega} \implies T = 2\pi\sqrt{\frac{L}{g}}$$</div>
-            <div class="formula">$$f = \frac{1}{T} \implies f = \frac{1}{2\pi}\sqrt{\frac{g}{L}}$$</div>
-
-            <h3>B. Key Points & Formulas: Simple Pendulum</h3>
-            <ul>
-                <li><strong>Restoring Force:</strong> The tangential component of gravity ($F \approx -mg\theta$ for small angles).</li>
-                <li><strong>Condition:</strong> Only approximates SHM for <strong>small angles</strong>. At large angles, the period actually increases slightly and the motion is not purely sinusoidal.</li>
-                <li><strong>Mass Independence:</strong> The period is <strong>independent</strong> of the mass of the bob.</li>
-                <li><strong>Factors:</strong> The period depends only on the length of the string ($L$) and the gravitational field strength ($g$).</li>
-            </ul>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Variable</th>
-                        <th>Formula</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Restoring Force (exact)</td>
-                        <td>$F_{tan} = -mg\sin\theta$</td>
-                    </tr>
-                    <tr>
-                        <td>Restoring Force (approx)</td>
-                        <td>$F_{tan} \approx -mg\theta$ (small $\theta$)</td>
-                    </tr>
-                    <tr>
-                        <td>Angular Frequency</td>
-                        <td>$\omega = \sqrt{\frac{g}{L}}$</td>
-                    </tr>
-                    <tr>
-                        <td>Period</td>
-                        <td>$T = 2\pi\sqrt{\frac{L}{g}}$</td>
-                    </tr>
-                    <tr>
-                        <td>Frequency</td>
-                        <td>$f = \frac{1}{2\pi}\sqrt{\frac{g}{L}}$</td>
-                    </tr>
-                    <tr>
-                        <td>Potential Energy</td>
-                        <td>$U_g = mgh$ (where $h$ is vertical height above lowest point)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="card">
-            <h2>IV. Other sample systems</h2>
-            
-            <figure>
-                <img class="normalized" src="springs_diagram.png" alt="Springs Diagram: Parallel and Series configurations" class="normalized">
-                <figcaption>Figure: Spring Configurations</figcaption>
-            </figure>
-
-            <h3>I. Springs in Parallel Configuration</h3>
-            <p><strong>Visualization:</strong> Two springs, $k_1$ and $k_2$, are placed side-by-side. One end of both springs is attached to a fixed wall, and the other end of both springs is attached to the same movable mass $m$.</p>
-            
-            <p><strong>Combine and Solve for $k_{eq}$:</strong></p>
-            <p>Substitute the individual force equations into the total force equation:</p>
-            <div class="formula">$$F_{total} = (k_1 x) + (k_2 x)$$</div>
-            <p>Factor out the common displacement term $x$:</p>
-            <div class="formula">$$F_{total} = (k_1 + k_2) x$$</div>
-            <p>Now, compare this result to the definition of the equivalent spring ($F_{total} = k_{eq} \cdot x$):</p>
-            <div class="formula">$$k_{eq} x = (k_1 + k_2) x$$</div>
-
-            <h3>II. Springs in Series Configuration</h3>
-            <p><strong>Combine and Solve for $k_{eq}$:</strong></p>
-            <p>Substitute the individual stretch equations into the total displacement equation:</p>
-            <div class="formula">$$x_{total} = \left( \frac{F_{total}}{k_1} \right) + \left( \frac{F_{total}}{k_2} \right)$$</div>
-            <p>Factor out the common force term $F_{total}$:</p>
-            <div class="formula">$$x_{total} = F_{total} \left( \frac{1}{k_1} + \frac{1}{k_2} \right)$$</div>
-            <p>Now, recall the definition of the equivalent spring, rearranged to solve for $x$: $x_{total} = \frac{F_{total}}{k_{eq}} = F_{total} \left( \frac{1}{k_{eq}} \right)$.</p>
-            <p>Compare the derived equation with the definition:</p>
-            <div class="formula">$$F_{total} \left( \frac{1}{k_{eq}} \right) = F_{total} \left( \frac{1}{k_1} + \frac{1}{k_2} \right)$$</div>
-            <p>Dividing by $F_{total}$, we get the final formula involving reciprocals:</p>
-            <div class="formula">$$\frac{1}{k_{series}} = \frac{1}{k_1} + \frac{1}{k_2}$$</div>
-
-            <h3>III. The Torsional Pendulum (Twisting Oscillation)</h3>
-            <p>Instead of moving back and forth in a line or swinging in an arc, this system oscillates by <strong>twisting</strong> around an axis.</p>
-            <p><strong>The Setup:</strong> A rigid object (like a disk, rod, or sphere) is suspended by a thin wire or fiber clamped at the top. The object is rotated slightly by an angle $\theta$ and released.</p>
-            <p><strong>The Restoring Mechanism:</strong> The wire itself resists being twisted. When twisted, the shear stresses within the wire material create a <strong>restoring torque</strong> ($\tau$) that is proportional to the angular displacement.</p>
-            <p><strong>Hooke's Law for Torsion:</strong> $\tau = -\kappa \theta$ (where $\kappa$ is the torsion constant of the wire).</p>
-            <p><strong>The Inertia:</strong> The <strong>rotational inertia</strong> ($I$) of the suspended object resists changes in angular velocity.</p>
-            <p><strong>The Period Formula:</strong> This is the rotational analog to the spring-mass system. Mass ($m$) is replaced by rotational inertia ($I$), and the spring constant ($k$) is replaced by the torsion constant ($\kappa$).</p>
-            <div class="formula">$$T = 2\pi\sqrt{\frac{I}{\kappa}}$$</div>
-
-            <figure>
-                <img class="normalized" src="torsional_pendulum.png" alt="Torsional Pendulum Diagram" class="normalized">
-                <figcaption>Figure: Torsional Pendulum</figcaption>
-            </figure>
-
-            <h3>IV. The Physical Pendulum (Compound Pendulum)</h3>
-            <p>The "simple pendulum" assumes all mass is concentrated at a single point. A <strong>physical</strong> pendulum is any real, rigid body of arbitrary shape that swings around a pivot point that is <strong>not</strong> its center of mass.</p>
-            <p><strong>The Setup:</strong> Imagine drilling a hole near the top of a baseball bat or a meter stick and letting it swing back and forth on a nail.</p>
-            <p><strong>The Restoring Mechanism:</strong> Just like the simple pendulum, it's <strong>gravity</strong>. However, gravity acts on the object's Center of Mass (CM). This creates a restoring torque around the pivot point.</p>
-            <p><strong>The Inertia:</strong> The <strong>rotational inertia</strong> ($I$) of the entire object <strong>about the chosen pivot point</strong>.</p>
-            <p><strong>The Period Formula:</strong></p>
-            <div class="formula">$$T = 2\pi\sqrt{\frac{I}{mgd}}$$</div>
-            <p>Where:</p>
-            <ul class="tight">
-                <li>$I$ = Rotational inertia about the pivot.</li>
-                <li>$m$ = Total mass of the object.</li>
-                <li>$g$ = Acceleration due to gravity.</li>
-                <li>$d$ = The distance between the pivot point and the center of mass.</li>
-            </ul>
-            <p>(Note: If you shrink the object to a point mass at distance $L$, $I=mL^2$ and $d=L$, this formula simplifies back to the simple pendulum formula $T = 2\pi\sqrt{L/g}$).</p>
-
-            <h3>V. Vertical Floating Object (Buoyancy Oscillator)</h3>
-            <p>A classic fluid mechanics example involving oscillation.</p>
-            <p><strong>The Setup:</strong> A uniform object, like a wooden cylinder or a test tube weighted at the bottom, floats vertically in a fluid (like water) in stable equilibrium. It is pushed down slightly deeper into the fluid and released.</p>
-            <p><strong>The Restoring Mechanism:</strong> <strong>Buoyancy (Archimedes' Principle)</strong>. When the object is pushed down an extra distance $y$, it displaces an extra volume of fluid. This creates an additional upward buoyant force that is directly proportional to the displacement.</p>
-            <p>$F_{restoring} \propto -y$. This results in Simple Harmonic Motion.</p>
-            <p><strong>The Period Formula:</strong> (For a cylinder of density $\rho_{object}$ and height $H$, floating in a fluid of density $\rho_{fluid}$).</p>
-            <div class="formula">$$T = 2\pi\sqrt{\frac{H (\rho_{object})}{\rho_{fluid} g}}$$</div>
-            <p>(More generally, $T = 2\pi\sqrt{m / (\rho_{fluid} A g)}$ where A is the cross-sectional area at the waterline).</p>
-
-            <h3>VI. Mass on a Cantilever Beam (Diving Board)</h3>
-            <p>This setup utilizes the elastic properties of solid materials resisting bending.</p>
-            <p><strong>The Setup:</strong> A long, flat beam is clamped rigidly at one end (like a diving board). A mass $m$ is attached to the free end. The mass is pushed down and released, causing the end of the board to vibrate up and down.</p>
-            <p><strong>The Restoring Mechanism:</strong> The <strong>elasticity of the beam material</strong>. When bent, internal stresses in the material try to restore the beam to its straight shape. For small deflections, this acts exactly like a spring following Hooke's Law ($F = -k_{equivalent} x$).</p>
-            <p><strong>The Period Formula:</strong> It follows the standard spring-mass formula $T = 2\pi\sqrt{m/k_{eq}}$. However, the "equivalent spring constant" $k_{eq}$ depends on the material properties and geometry of the beam:</p>
-            <div class="formula">$$k_{eq} = \frac{3EI}{L^3}$$</div>
-            <p>Where:</p>
-            <ul class="tight">
-                <li>$E$ = Young's Modulus (stiffness of the material).</li>
-                <li>$I$ = Area moment of inertia (based on the cross-sectional shape of the beam).</li>
-                <li>$L$ = Length of the beam.</li>
-            </ul>
-
-            <figure>
-                <img class="normalized" src="cantilever_beam.png" alt="Cantilever Beam Diagram" class="normalized">
-                <figcaption>Figure 1: Cantilever Beam with Mass M</figcaption>
-            </figure>
+                <li>
+                    <span class="chapter-number"></span>
+                    <div class="chapter-entry">
+                    <a href="gravity.html">3. Gravity</a>
+                    </div>
+                </li>
+                </ol>
+            </section>
         </section>
 
     </main>

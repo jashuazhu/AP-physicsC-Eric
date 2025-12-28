@@ -311,13 +311,8 @@ section + section {
   color: var(--muted);
 }
 
-
-figure img, img.normalized {
-    text-align: center;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+figure {
+  margin: 2rem 0;
 }
 
 figcaption {
@@ -516,5 +511,8 @@ aside.refs{
     minmax(var(--refs-aside-min), var(--refs-aside-max));
 }
 
-.bookmark { display:inline-block; margin: 1.25rem 0 0; padding:.6rem 1rem; border-radius:10px; text-decoration:none; background: var(--primary, #111827); color:#fff; }
-.bookmark:hover { filter: brightness(1.08); }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

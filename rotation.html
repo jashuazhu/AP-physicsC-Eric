@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Rotational Physics Concepts</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <main class="book-page">
+        <header class="book-header">
+            <p class="lead">Physics Review</p>
+            <h1>Core Rotational Physics Concepts</h1>
+            <p class="muted">By Zhu @ Groton School</p>
+        </header>
+
+        <section class="card">
+            <h2>1. Relating Linear and Angular Quantities</h2>
+            <p>These formulas bridge the gap between how an object moves along a path versus how it rotates around an axis.</p>
+            <ul>
+                <li><strong>Arc Length ($s = r\theta$):</strong> Relates linear distance to angular displacement.</li>
+                <li><strong>Tangential Velocity ($v = r\omega$):</strong> Relates linear speed to angular velocity.</li>
+                <li><strong>Tangential Acceleration ($a_{tan} = r\alpha$):</strong> Relates linear acceleration to angular acceleration.</li>
+            </ul>
+
+            <details>
+                <summary>Key Formula Derivation: $v = r\omega$</summary>
+                <p>The derivation stems from the definition of arc length ($s$).</p>
+                <ol>
+                    <li>Start with the definition of arc length: $$s = r\theta$$</li>
+                    <li>Take the derivative with respect to time ($t$) on both sides: $$\frac{ds}{dt} = \frac{d}{dt}(r\theta)$$</li>
+                    <li>Since the radius ($r$) is constant for a rigid body, it moves outside the derivative: $$\frac{ds}{dt} = r \cdot \frac{d\theta}{dt}$$</li>
+                    <li>By definition, linear velocity $v = \frac{ds}{dt}$ and angular velocity $\omega = \frac{d\theta}{dt}$.</li>
+                    <li>Substituting these gives the final result: $$v = r\omega$$</li>
+                </ol>
+            </details>
+        </section>
+
+        <section class="card">
+            <h2>2. Rotational Kinematics </h2>
+            <p>When angular acceleration ($\alpha$) is constant, rotational motion mirrors linear motion.</p>
+            <ul>
+                <li><strong>Displacement equivalents:</strong> $\Delta x$ becomes $\Delta \theta$.</li>
+                <li><strong>Velocity equivalents:</strong> $v$ becomes $\omega$.</li>
+                <li><strong>Acceleration equivalents:</strong> $a$ becomes $\alpha$.</li>
+            </ul>
+            <p><strong>The standard equations:</strong> For example, the angular equivalent of $v^2 = v_0^2 + 2a\Delta x$ is:</p>
+            <div class="formula">
+                $$\omega^2 = \omega_0^2 + 2\alpha(\theta - \theta_0)$$
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>3. Basic Rotation Information</h2>
+            <p>This section introduces the causes and energetic costs of rotation.</p>
+            <ul>
+                <li><strong>Rotational Inertia ($I$):</strong> A measure of how difficult it is to change an object's rotation.
+                    <ul>
+                        <li>For point masses: $I = mr^2$.</li>
+                        <li>For distributed mass: $I = \int r^2 dm$.</li>
+                    </ul>
+                </li>
+                <li><strong>Torque ($\tau$):</strong> A force’s ability to cause rotation, defined as $\vec{\tau} = \vec{r} \times \vec{F}$.</li>
+                <li><strong>Newton’s Second Law for Rotation:</strong> The net torque equals the product of rotational inertia and angular acceleration ($\sum \tau = I\alpha$).</li>
+                <li><strong>Kinetic Energy:</strong>
+                    <ul>
+                        <li>Pure rotation: $K_{rotation} = \frac{1}{2}I\omega^2$.</li>
+                        <li>Rolling motion (Rotation + Translation): $K_{rolling} = \frac{1}{2}I_{cm}\omega^2 + \frac{1}{2}mv_{cm}^2$.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>4. Angular Momentum ($L$)</h2>
+            <p>Angular momentum describes the "quantity of rotation" an object has.</p>
+            <ul>
+                <li><strong>Rigid Objects:</strong> For a solid rotating body, $L = I\omega$.</li>
+                <li><strong>Point Particles:</strong> For a single mass moving relative to a point, $\vec{L} = \vec{r} \times \vec{p}$.</li>
+                <li><strong>Conservation:</strong> Angular momentum is conserved unless an external net torque acts on the system.</li>
+                <li><strong>Static Equilibrium:</strong> For an object to remain perfectly still, both net force and net torque must be zero ($\sum F = 0, \sum \tau = 0$).</li>
+            </ul>
+
+            <details>
+                <summary>Key Formula Derivation: $\sum \tau = \frac{dL}{dt}$</summary>
+                <p>This is the rotational analog of $F = \frac{dp}{dt}$.</p>
+                <ol>
+                    <li>Start with the definition of angular momentum for a rigid body: $$L = I\omega$$</li>
+                    <li>Take the time derivative of both sides: $$\frac{dL}{dt} = \frac{d}{dt}(I\omega)$$</li>
+                    <li>For a rigid body with constant mass distribution, $I$ is constant: $$\frac{dL}{dt} = I \cdot \frac{d\omega}{dt}$$</li>
+                    <li>Since angular acceleration $\alpha = \frac{d\omega}{dt}$, the equation becomes $$\frac{dL}{dt} = I\alpha$$</li>
+                    <li>From Newton's Second Law for rotation, we know $\sum \tau = I\alpha$.</li>
+                    <li>Therefore, $$\sum \tau = \frac{dL}{dt}$$</li>
+                </ol>
+            </details>
+        </section>
+
+        <section class="card">
+            <h2>5. Key Problems: Rotational Inertia ($I$)</h2>
+            <p>Reference: <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/mi.html#mi">HyperPhysics Moment of Inertia</a></p>
+
+            <figure style="margin: auto; text-align: center; width: fit-content;">
+                <img src="rotation_inertia.png" alt="Rolling Motion Diagram showing P1, P2, and center of mass velocity" class="normalized">
+                <figcaption>Rotation Inertia Calculations</figcaption>
+            </figure>
+
+            <h3>1.Uniform Thin Rod (Axis through Center)</h3>
+            <p>For a rod of mass $M$ and length $L$, we consider a small segment $dx$ at a distance $x$ from the center.</p>
+            <p>Result:</strong> $I = \frac{1}{12} ML^2$</p>
+            <ul class="tight">
+                <li>Linear Mass Density ($\lambda$): $\lambda = \frac{M}{L}$</li>
+                <li>Mass Element ($dm$): $dm = \lambda \, dx = \left(\frac{M}{L}\right) dx$</li>
+            </ul>
+            <details>
+                <summary>Derivation: Thin Rod</summary>
+                <p>We integrate from the left end ($x = -L/2$) to the right end ($x = L/2$):</p>
+                <div class="formula">
+                    $$I = \int_{-L/2}^{L/2} x^2 \left(\frac{M}{L}\right) dx = \frac{M}{L} \left[ \frac{x^3}{3} \right]_{-L/2}^{L/2}$$
+                    $$I = \frac{M}{3L} \left[ \left(\frac{L}{2}\right)^3 - \left(-\frac{L}{2}\right)^3 \right] = \frac{M}{3L} \left[ \frac{L^3}{8} + \frac{L^3}{8} \right] = \frac{M}{3L} \left( \frac{2L^3}{8} \right)$$
+                </div>
+                <p><strong>Result:</strong> $I = \frac{1}{12} ML^2$</p>
+            </details>
+
+            <hr>
+
+            <h3>2. Solid Disk (Axis through Center)</h3>
+            <p>A disk of mass $M$ and radius $R$ can be thought of as a collection of thin rings.</p>
+            <p>Result:</strong> $I = \frac{1}{2} MR^2$</p>
+            <ul class="tight">
+                <li>Surface Mass Density ($\sigma$): $\sigma = \frac{M}{\pi R^2}$</li>
+                <li>Mass Element ($dm$): For a ring of radius $r$ and thickness $dr$, the area is $dA = 2\pi r \, dr$. Thus, $dm = \sigma (2\pi r \, dr)$.</li>
+            </ul>
+            <details>
+                <summary>Derivation: Solid Disk</summary>
+                <div class="formula">
+                    $$I = \int_0^R r^2 \, dm = \int_0^R r^2 \left( \frac{M}{\pi R^2} \right) (2\pi r \, dr)$$
+                    $$I = \frac{2M}{R^2} \int_0^R r^3 \, dr = \frac{2M}{R^2} \left[ \frac{r^4}{4} \right]_0^R = \frac{2M}{R^2} \cdot \frac{R^4}{4}$$
+                </div>
+                <p><strong>Result:</strong> $I = \frac{1}{2} MR^2$</p>
+            </details>
+
+            <hr>
+
+            <h3>3. Hollow Spherical Shell (Thin)</h3>
+            <p>For a hollow shell of mass $M$ and radius $R$, we slice it into thin rings along its surface.</p>
+            <p>Result:</strong> $I = \frac{2}{3} MR^2$</p>
+            <ul class="tight">
+                <li>Area Mass Density ($\sigma$): $\sigma = \frac{M}{4\pi R^2}$</li>
+                <li>Geometry: Using spherical coordinates, a ring at angle $\theta$ has a radius $r = R \sin \theta$.</li>
+                <li>The mass element $dm = \sigma (2\pi R \sin \theta)(R \, d\theta)$.</li>
+            </ul>
+            <details>
+                <summary>Derivation: Hollow Shell</summary>
+                <figure style="margin: auto; text-align: center; width: fit-content;">
+                    <img src="sphere_ds.png" alt="Rolling Motion Diagram showing P1, P2, and center of mass velocity" class="normalized">
+                    <figcaption>how to integral surface on a sphere</figcaption>
+                </figure>
+                <div class="formula">
+                    $$I = \int (R \sin \theta)^2 \, dm = \int_0^\pi (R^2 \sin^2 \theta) \left( \frac{M}{4\pi R^2} \right) (2\pi R^2 \sin \theta \, d\theta)$$
+                    $$I = \frac{MR^2}{2} \int_0^\pi \sin^3 \theta \, d\theta$$
+                </div>
+                <p>Using the identity $\int_0^\pi \sin^3 \theta \, d\theta = \frac{4}{3}$:</p>
+                <p><strong>Result:</strong> $I = \frac{2}{3} MR^2$</p>
+            </details>
+
+            <hr>
+
+            <h3>4. Solid Sphere</h3>
+            <p>A solid sphere is treated as a collection of "onion-like" hollow shells of thickness $dr$.</p>
+            <p>Result:</strong> $I = \frac{2}{5} MR^2$</p>
+            <ul class="tight">
+                <li>Volumetric Mass Density ($\rho$): $\rho = \frac{M}{\frac{4}{3}\pi R^3}$</li>
+                <li>Mass Element ($dm$): $dm = \rho (4\pi r^2 \, dr)$</li>
+            </ul>
+            <details>
+                <summary>Derivation: Solid Sphere</summary>
+                <figure style="margin: auto; text-align: center; width: fit-content;">
+                    <img src="sphere_dv.png" alt="Rolling Motion Diagram showing P1, P2, and center of mass velocity" class="normalized">
+                    <figcaption>how to integral volume on a sphere</figcaption>
+                </figure>
+                <p>We use the result from the hollow shell ($dI = \frac{2}{3} r^2 \, dm$):</p>
+                <div class="formula">
+                    $$I = \int_0^R \frac{2}{3} r^2 \left( \frac{M}{\frac{4}{3}\pi R^3} \cdot 4\pi r^2 \, dr \right) = \int_0^R \frac{2}{3} r^2 \left( \frac{3M}{R^3} r^2 \, dr \right)$$
+                    $$I = \frac{2M}{R^3} \int_0^R r^4 \, dr = \frac{2M}{R^3} \left[ \frac{r^5}{5} \right]_0^R$$
+                </div>
+                <p><strong>Result:</strong> $I = \frac{2}{5} MR^2$</p>
+            </details>
+        </section>
+
+        <section class="card">
+            <h2>6. Key Problems:Rotational Energy</h2>
+            <h3>Rotation without slipping</h3>
+            
+            <figure style="margin: auto; text-align: center; width: fit-content;">
+                <img src="rotation_no_slipping.png" alt="Rolling Motion Diagram showing P1, P2, and center of mass velocity" class="normalized">
+                <figcaption>Diagram of Rolling Motion Mechanics</figcaption>
+            </figure>
+
+            <p>For rolling without slipping, the key formula linking linear motion to rotational motion is $v_{CM}=R\omega$, meaning the center of mass velocity ($v_{CM}$) equals the radius ($R$) times the angular velocity ($\omega$).</p>
+            <p>Similarly, linear acceleration ($a_{CM}$) equals $R\alpha$ (angular acceleration). This condition means the contact point's velocity relative to the surface is zero, so the total kinetic energy is the sum of translational ($\frac{1}{2}mv^{2}$) and rotational ($\frac{1}{2}I\omega ^{2}$) energy.</p>
+            
+            <h3>Total Kinetic Energy ($K_{total}$)</h3>
+            <p>For an object rolling without slipping, the total kinetic energy is the sum of its translational and rotational kinetic energies.</p>
+            <div class="formula">
+                $$K_{total}=K_{trans}+K_{rot}$$
+                $$K_{total}=\frac{1}{2}mv_{CM}^{2}+\frac{1}{2}I\omega ^{2}$$
+            </div>
+        </section>
+
+        <nav class="chapter-nav bottom">
+            <span class="disabled">Previous</span>
+            <span class="disabled">Next</span>
+        </nav>
+    </main>
+</body>
+</html>
